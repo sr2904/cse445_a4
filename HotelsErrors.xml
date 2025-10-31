@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file includes 5 validation errors on purpose -->
+<Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="Hotels.xsd">
+
+  <!-- (1) Root should be <Hotels>, not <Hotel> -->
+  <Hotel Rating="4.2">
+    <Name>Westin Tempe</Name>
+    <Phone>480-968-8885</Phone>
+    <!-- (3) Missing one required <Phone> -->
+    <Address NearestAirport="Sky Harbor">
+      <Number>11</Number>
+      <Street>E 7th St</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
+  <Hotel>
+    <!-- (5) Two Name tags -->
+    <Name>Hyatt Regency Scottsdale</Name>
+    <Name>Duplicate Name</Name>
+    <Phone>480-444-1234</Phone>
+    <!-- (2) Missing Rating attribute -->
+    <Address>
+      <Number>7500</Number>
+      <Street>E Doubletree Ranch Rd</Street>
+      <City>Scottsdale</City>
+      <State>AZ</State>
+      <!-- (4) Missing closing </Address> -->
+  </Hotel>
+
+</Hotel>
